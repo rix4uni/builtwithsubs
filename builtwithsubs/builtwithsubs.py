@@ -45,11 +45,11 @@ headers = {
 }
 
 # Process each line from standard input
-for domain in sys.stdin:
-    domain = domain.strip()  # Remove leading/trailing whitespaces
+for query_input in sys.stdin:
+    query_input = query_input.strip()  # Remove leading/trailing whitespaces
 
-    if domain:  # If the line is not empty
-        response = requests.get(f'https://builtwith.com/relationships/{domain}', headers=headers, timeout=args.timeout).content
+    if query_input:  # If the line is not empty
+        response = requests.get(f'https://builtwith.com/relationships/{query_input}', headers=headers, timeout=args.timeout).content
         html = html.fromstring(response)
 
         for target in html.xpath('//td[@class="hbomb"]/a/text()'):
