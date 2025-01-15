@@ -1,6 +1,6 @@
 ## builtwithsubs
 
-Scrape builtwith relationships with cookie and api key.
+Scrape builtwith relationships without cookie and api key.
 
 ## Installation
 ```
